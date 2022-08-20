@@ -9,3 +9,4 @@ print(min(Numbers), max(Numbers))
 
 # for _ in range(N):
 #     Numbers.append(number)
+
