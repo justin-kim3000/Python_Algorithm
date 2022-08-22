@@ -1,11 +1,11 @@
-a, b = input().split()
+compareNumber1, compareNumber2 = input().split()
 
-a = int(a)
-b = int(b)
+compareNumber1 = int(compareNumber1)
+compareNumber2 = int(compareNumber2)
 
-if a>b:
+if compareNumber1 > compareNumber2:
     print(">")
-elif a<b:
+elif compareNumber1 < compareNumber2:
     print("<")
 else:
     print("==")

@@ -1,5 +1,4 @@
-N = int(input())
+inputNumber = int(input())
 
-for i in range(1,10):
-    print("{} * {} = {}".format(N,i,N*i))
-    
+for i in range(1, 10):
+    print("{} * {} = {}".format(inputNumber, i, inputNumber*i))

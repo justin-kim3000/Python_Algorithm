@@ -1,3 +1,3 @@
-N = str(input())
+asciiCode = str(input())
 
-print(ord(N))
+print(ord(asciiCode))

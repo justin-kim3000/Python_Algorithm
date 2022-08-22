@@ -1,13 +1,13 @@
-H, M = input().split()
+number1, number2 = input().split()
 
-H = int(H)
-M = int(M)
+number1 = int(number1)
+M = int(number2)
 
 Setting = 45
-if H!=0 and M-Setting <0:
-    print(H-1,M+60-Setting)
-elif H==0 and M-Setting <0:
-    H = 23
-    print(H,M+60-Setting)
+if number1 != 0 and number2-Setting < 0:
+    print(number1-1, number2+60-Setting)
+elif number1 == 0 and number2-Setting < 0:
+    number1 = 23
+    print(number1, number2+60-Setting)
 else:
-    print(H,M-Setting)
+    print(number1, number2-Setting)

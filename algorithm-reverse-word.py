@@ -1,6 +1,6 @@
-N = int(input())
+inputWords = int(input())
 
-for i in range(N):
+for i in range(inputWords):
     words = list(input().split())
     temp = []
     for word in words:

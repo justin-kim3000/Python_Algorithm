@@ -1,7 +1,7 @@
 from operator import index
 
 
-S = str(input())
+inputWords = str(input())
 alphabet = str("abcdefghijklmnopqrstuvwxyz")
 for i in alphabet:
-    print(S.find(i), end=' ')
+    print(inputWords.find(i), end=' ')
