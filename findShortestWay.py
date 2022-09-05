@@ -4,14 +4,17 @@ from posixpath import split
 x, y, w, h = map(int, input().split())
 
 
-def findAbsoluteValue(x, y, w, h):
-    result = []
-    result.append(abs(h-y))
-    result.append(abs(w-x))
-    result.append(abs(x))
-    result.append(abs(y))
+# def findAbsoluteValue(x, y, w, h):
+#     result = []
+#     result.append(abs(h-y))
+#     result.append(abs(w-x))
+#     result.append(abs(x))
+#     result.append(abs(y))
 
-    return min(result)
+#     return min(result)
 
 
-print(findAbsoluteValue(x, y, w, h))
+# print(findAbsoluteValue(x, y, w, h))
+
+
+print(min(x, y, w-x, h-y))
