@@ -39,8 +39,7 @@
 # -------------------------------------------
 
 inputNumber = int(input())
-temp = []
-for i in range(inputNumber):
-    word = list(map(str, input()))
-    temp.append(word)
-print(temp)
+
+for _ in range(inputNumber):
+    word = input()
+    print(word[0]+word[-1])
