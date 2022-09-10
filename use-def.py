@@ -14,6 +14,6 @@ def verification(number):
 
 temp = 0
 
-for i in number:
+for i in list(map(int, input().split())):
     temp += int(i)**2
 print(temp % 10)
