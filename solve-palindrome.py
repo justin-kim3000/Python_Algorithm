@@ -1,5 +1,7 @@
-while (1):
-    inputNumber = input()
-    if inputNumber[0] == inputNumber[-1]:
+inputNumber = input()
+
+while (inputNumber != '0'):
+    if inputNumber == inputNumber[::-1]:
         print("yes")
-    EOFError
+    else:
+        print("no")
