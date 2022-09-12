@@ -1,7 +1,10 @@
-inputNumber = input()
 
-while (inputNumber != '0'):
-    if inputNumber == inputNumber[::-1]:
-        print("yes")
+while (1):
+    inputNumber = input()
+    if inputNumber == '0':
+        break
     else:
-        print("no")
+        if inputNumber == inputNumber[::-1]:
+            print("yes")
+        else:
+            print("no")
