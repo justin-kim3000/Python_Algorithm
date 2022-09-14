@@ -1,8 +1,9 @@
 countMember = int(input())
 members = []
-for _ in range(countMember):
-    members.append(list(map(str,input().split())))
-for i in range(len(members)):
-    members[i][0].sort()
+for i in range(countMember):
+    age, name = map(str,input().split())
+    members.append([int(age),i,name])
 
-print(members[1], members[0])
+members.sort()
+for i in range(len(members)):
+    print("{} {}".format(members[i][0], members[i][2]))
