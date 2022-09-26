@@ -1,9 +1,9 @@
-arr = input().split('-')
-print(arr)
-s = 0
-for i in arr[0].split('+'):
-    s += int(i)
-for i in arr[1:]:
+array_number = input().split('-')
+print(array_number)
+sum = 0
+for i in array_number[0].split('+'):
+    sum += int(i)
+for i in array_number[1:]:
     for j in i.split('+'):
-        s -= int(j)
-print(s)
+        sum -= int(j)
+print(sum)
