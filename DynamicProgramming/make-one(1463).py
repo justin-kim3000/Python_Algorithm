@@ -1,8 +1,16 @@
 import sys
 
 N = int(sys.stdin.readline())
-countNum = 0
+# 빈방 만들기
+room = [0]*(N+1)
 
+for i in range(2, N+1):
+    room[i] = room[i-1] + 1
+    if i % 2 == 0:
+        room[i] = min(room[i], room[i//2]+1)
+    if i % 3 == 0:
+        room[i] = min(room[i], room[i//3]+1)
+print(room[N])
 # 재귀로 안풀림..
 # def calculate(N):
 #     global countNum
