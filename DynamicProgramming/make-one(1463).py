@@ -3,7 +3,7 @@ import sys
 N = int(sys.stdin.readline())
 # 빈방 만들기
 room = [0]*(N+1)
-
+print(room, "room!")
 for i in range(2, N+1):
     room[i] = room[i-1] + 1
     if i % 2 == 0:
