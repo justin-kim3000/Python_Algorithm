@@ -21,10 +21,10 @@ def quad(x, y, n):
             # 만약 check값이 graph의 {ex)graph[0][2] = 0}과 같지 않다면
             # check값을 -1로 바꾸고 반복문을 정지(break)한다.
             if check != graph[i][j]:
-                check = -1
+                check = -5
                 break
     # 만약 check값이 -1이라면 n을 2로 나눈다.
-    if check == -1:
+    if check == -5:
         n //= 2
         # 좌측 상단
         quad(x, y, n)
@@ -42,12 +42,11 @@ def quad(x, y, n):
     elif check == 0:
         count_white += 1
 
-    # count한 값을 리턴
-    return count_white, count_blue
+    # 굳이 각각 값 리턴 안해도 됨(글로벌 변수)
 
 
-# 각각 나눠주고
-count_white, count_blue = quad(0, 0, N)
+# 굳이 리턴 안해도됨
+quad(0, 0, N)
 
 # 출력함
 print(count_white)
