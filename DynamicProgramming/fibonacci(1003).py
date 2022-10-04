@@ -1,26 +1,35 @@
 # 1번 방법 - 시간초과
 import sys
 T = int(sys.stdin.readline())
+# 변수 입력
 count_zero = 0
 count_one = 0
+
+# 피보나치 수열 함수
 
 
 def fibonacci(N):
     global count_zero, count_one
+    # N == 0 일 경우 count_zero에 1을 더한다.
     if N == 0:
         count_zero += 1
         return 0
+    # N == 1 일 경우 count_one에 1을 더한다.
     elif N == 1:
         count_one += 1
         return 1
+    # 재귀 함수를 활용해 피보나치 수열을 반환한다.
     else:
         return fibonacci(N-1) + fibonacci(N-2)
 
 
+# T번 반복
 for _ in range(T):
+    # 피보나치 숫자 입력
     num1 = int(sys.stdin.readline())
     fibonacci(num1)
     print(count_zero, count_one)
+    # 재활용을 위해 0으로 초기화 한다.
     count_zero = 0
     count_one = 0
 
