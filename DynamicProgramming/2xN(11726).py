@@ -13,12 +13,15 @@
 
 # print(data(N) % 10007)
 
-N = int(input())
-res = [i+1 for i in range(N)]
 
-if N <= 3:
+N = int(input())
+# 1부터 N까지 숫자를 리스트에 넣는다.
+res = [i+1 for i in range(N)]
+# 2이하의 숫자는 그대로 출력한다.(규칙 없음)
+if N <= 2:
     print(N)
 else:
+    # 3부터 N까지 규칙에 맞춰 대입한다.
     for i in range(3, N):
         res[i] = res[i-1]+res[i-2]
     print(res[N-1] % 10007)
