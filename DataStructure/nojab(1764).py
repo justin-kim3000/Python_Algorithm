@@ -7,10 +7,6 @@ for _ in range(N):
 
 for _ in range(M):
     li2.add(input())
-
-print(li1)
-print(li2)
-
 res = sorted(list(li1 & li2))
 print(len(res))
 for i in res:
