@@ -1,32 +1,44 @@
-def draw_star(n):
-    global Map
-
-    if n == 3:
-        Map[0][:3] = Map[2][:3] = [1]*3
-        Map[1][:3] = [1, 0, 1]
-        return
-
-    a = n//3
-    draw_star(n//3)
-    for i in range(3):
-        for j in range(3):
-            if i == 1 and j == 1:
-                continue
-            for k in range(a):
-                Map[a*i+k][a*j:a*(j+1)] = Map[k][:a]  # 핵심 아이디어
-
+# 아이디어 : 1이면 별이 찍히고, 0일 경우 빈칸으로 처리한다.
+# 0인 행렬을 만듬
+# 별은 *** * * ***로 찍힘.
+# 최소 단위는 '***' '* *' '***'
+#
 
 N = int(input())
+room = [[0 for _ in range(N)] for _ in range(N)]
 
-# 메인 데이터 선언
-Map = [[0 for i in range(N)] for i in range(N)]
 
-draw_star(N)
+def star(n):
+    global room
 
-for i in Map:
+    if n == 3:
+        room[0][:3] = room[2][:3] = [1]*3
+        room[1][:3] = [1, 0, 1]
+        return
+
+    # 3 간격으로 패턴이 반복
+    split_ = n//3
+    star(split_)
+    # x,y의 3x3 행렬을 만듬.
+    for i in range(3):
+        for j in range(3):
+            # 위에 있는 [1,0,1]의 0 부분이므로 그냥 넘긴다.
+            if i == 1 and j == 1:
+                continue
+            # think more!
+            for k in range(split_):
+                room[split_*i+k][split_*j:split_*(j+1)] = room[k][:split_]
+
+
+star(N)
+# 행렬에 행을 출력
+for i in room:
+    # 행의 열을 출력
     for j in i:
+        # 만약 j가 참(1)이라면 별
         if j:
             print('*', end='')
+        # 아니면 빈칸
         else:
             print(' ', end='')
     print()
