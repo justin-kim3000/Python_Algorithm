@@ -25,7 +25,7 @@ def star(n):
             # 위에 있는 [1,0,1]의 0 부분이므로 그냥 넘긴다.
             if i == 1 and j == 1:
                 continue
-            # think more!
+            # think more! splic_ = 3,9값을 stack 형식으로 대입
             for k in range(split_):
                 room[split_*i+k][split_*j:split_*(j+1)] = room[k][:split_]
 
