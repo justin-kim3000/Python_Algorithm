@@ -1,37 +1,23 @@
-from re import M
-
-
+from audioop import reverse
+# N: 동전의 종류, K: 동전의 합
 N, K = map(int, input().split())
+# 입력 값을 받는 곳
 money = []
-sumMoneyLi = []
+# 동전 개수 카운팅
 sumMoney = 0
-countNum = 0
 
+# 입력 값을 리스트에 넣음
 for i in range(N):
     money.append(int(input()))
 
-print(money)
-# while 1:
-#     if sumMoney == K:
-#         print(countNum)
-#         break
+# 역순으로 치환
+money.reverse()
 
-for i in range(len(money)):
-    if money[i] > K:
-        sumMoneyLi.append(money[i-1])
-        for k in range(1, 11):
-            if sumMoneyLi[0]*k > K:
-                sumMoneyLi[0] = sumMoneyLi[0]*(k-1)
-                break
+# 높은 수 부터 나눈 몫을 카운트 함
+for j in money:
+    sumMoney += K//j
+    # 나머지 반환
+    K %= j
 
-        for j in range(i):
-            if sumMoneyLi[0] + money[j] > K:
-                sumMoneyLi.append(money[j-1])
-                for l in range(1, 11):
-                    if sumMoneyLi[0]+sumMoneyLi[1]*l > K:
-                        sumMoneyLi[1] = sumMoneyLi[1]*(l-1)
-                        break
-
-        break
-
-print(sumMoneyLi)
+# 결과
+print(sumMoney)
