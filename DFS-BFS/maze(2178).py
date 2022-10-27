@@ -6,7 +6,7 @@ graph = []
 for _ in range(1, N+1):
     graph.append(list(map(int, input())))
 
-# x,y 검사
+# x,y 상하좌우
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
@@ -31,3 +31,4 @@ def bfs(x, y):
 
 
 print(bfs(0, 0))
+print(graph)
