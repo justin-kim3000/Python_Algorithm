@@ -1,9 +1,14 @@
 N = int(input())
 
-Nmatrix = [[] for _ in range(N)]
+Nmatrix = []
 
 # print(Nmatrix)
-for i in range(N):
-    Nmatrix[i].append(list(map(int, input().split())))
+for _ in range(N):
+    Nmatrix.append(list(map(int, input().split())))
 
 print(Nmatrix)
+# print(Nmatrix[0][0][0])
+
+# for i in range(N):
+#     for j in range(N):
+#         for k in range(1):
