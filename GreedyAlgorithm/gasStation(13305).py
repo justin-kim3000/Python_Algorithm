@@ -6,10 +6,11 @@ oilPrice = []
 langhByCity = list(map(int, input().split()))
 oilPrice = list(map(int, input().split()))
 
-del oilPrice[-1]
-minoilprice = min(oilPrice)
-print(oilPrice.index(minoilprice))
+res = 0
+mini = oilPrice[0]
+for i in range(Ncity-1):
+    if oilPrice[i] < mini:
+        mini = oilPrice[i]
+    res += mini * langhByCity[i]
 
-
-print(oilPrice)
-print(langhByCity)
+print(res)
