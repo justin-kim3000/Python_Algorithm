@@ -1,11 +1,13 @@
-testCase = int(input())
+from sys import stdin
+
+testCase = int(stdin.readline())
 
 for _ in range(testCase):
-    N = int(input())
+    N = int(stdin.readline())
     testlist = []
     countli = 1
     for _ in range(N):
-        testlist.append(list(map(int, input().split())))
+        testlist.append(list(map(int, stdin.readline().split())))
     testlist.sort()
 
     minli = testlist[0][1]
