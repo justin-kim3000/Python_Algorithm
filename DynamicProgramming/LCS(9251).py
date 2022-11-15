@@ -1,15 +1,13 @@
-N = input()
-M = input()
+N = list(map(str, input()))
+M = list(map(str, input()))
 
-temp = str()
-countN = 0
-# for i in range(1, len(N)+1):
-#     if N[:i] in M:
-#         countN += 1
-#         print(countN)
+print(N)
+print(M)
+counting = 0
+for i in N:
+    for j in range(len(M)):
+        if i == M[j]:
+            del M[:j]
+            counting += 1
 
-for i in range(1, len(N)+1):
-    print(N[:i])
-
-for i in range(1, len(N)+1):
-    print(N[:-i])
+print(counting)
