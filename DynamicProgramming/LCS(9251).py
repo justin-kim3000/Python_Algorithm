@@ -1,13 +1,31 @@
-N = list(map(str, input()))
-M = list(map(str, input()))
+# N = list(map(str, input()))
+# M = list(map(str, input()))
 
-print(N)
-print(M)
-counting = 0
-for i in N:
-    for j in range(len(M)):
-        if i == M[j]:
-            del M[:j]
-            counting += 1
+# print(N)
+# print(M)
+# counting = 0
+# for i in N:
+#     for j in range(len(M)):
+#         if i == M[j]:
+#             del M[:j]
+#             counting += 1
 
-print(counting)
+# print(counting)
+
+
+import sys
+
+S1 = sys.stdin.readline().strip().upper()
+S2 = sys.stdin.readline().strip().upper()
+len1 = len(S1)
+len2 = len(S2)
+matrix = [[0] * (len2 + 1) for _ in range(len1 + 1)]
+
+for i in range(1, len1 + 1):
+    for j in range(1, len2 + 1):
+        if S1[i - 1] == S2[j - 1]:
+            matrix[i][j] = matrix[i - 1][j - 1] + 1
+        else:
+            matrix[i][j] = max(matrix[i - 1][j], matrix[i][j - 1])
+
+print(matrix[-1][-1])
