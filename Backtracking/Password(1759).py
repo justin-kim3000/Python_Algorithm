@@ -24,20 +24,26 @@ L, C = map(int, input().split())
 password = list(map(str, input().split()))
 password = sorted(password)
 
-vowels = ['a','e','i','o','u']
+vowels = ['a', 'e', 'i', 'o', 'u']
+sol = []
 
 
-def back_tracking(count,idx):
+def back_tracking(count, idx):
     if count == L:
         vo = 0
         co = 0
         for i in range(L):
             if password[i] in vowels:
-                vo +=1
+                vo += 1
             else:
-                co +=1
-        if vo >= 1 and co >=2:
-            print("".join(password))
+                co += 1
+        if vo >= 1 and co >= 2:
+            print("".join(sol))
         return
-    # for i in range(idx, C):
-        
+    for i in range(idx, C):
+        sol.append(password[i])
+        back_tracking(count+1, i+1)
+        sol.pop()
+
+
+back_tracking(0, 0)
