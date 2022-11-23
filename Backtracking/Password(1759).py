@@ -33,7 +33,7 @@ def back_tracking(count, idx):
         vo = 0
         co = 0
         for i in range(L):
-            if password[i] in vowels:
+            if sol[i] in vowels:
                 vo += 1
             else:
                 co += 1
