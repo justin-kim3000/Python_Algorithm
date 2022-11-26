@@ -12,4 +12,12 @@ N_list = []
 for i in range(N):
     N_list.append(list(map(int, input().split())))
 
-print(min(N_list[0]))
+for i in range(1,N):
+    # 빨
+    N_list[i][0] += min(N_list[i-1][1],N_list[i-1][2])
+    # 초
+    N_list[i][1] += min(N_list[i-1][0],N_list[i-1][2])
+    # 파
+    N_list[i][2] += min(N_list[i-1][0],N_list[i-1][1])
+        
+print(min(N_list[N-1]))
