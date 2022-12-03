@@ -85,4 +85,4 @@ for k in result:  # 각 단지마다 집의 수 출력
 
 # print(len(result))  # 총 단지수 출력
 # for k in result:  # 각 단지마다 집의 수 출력
-    print(k)
+    # print(k)
