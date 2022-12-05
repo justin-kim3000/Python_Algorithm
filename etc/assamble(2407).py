@@ -3,11 +3,7 @@ def factorial(N):
         return 1
     else:
         return factorial(N-1)*N
-    
-def fact2(N,M):
-    for _ in range(M):
-        return fact2(N-1)*N
 
 N,M = map(int,input().split())
-
-print(fact2(N,M)/factorial(M))
+    
+print(int(factorial(N)/(factorial(N-M)*factorial(M))))
