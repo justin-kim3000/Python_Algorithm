@@ -11,4 +11,3 @@ for i in range(M):
             continue
         print(0,end=' ')
         
-        
