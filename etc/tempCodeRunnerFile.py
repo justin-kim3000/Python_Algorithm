@@ -1,11 +1,9 @@
-name = [i for i in range(1,11)]
-# delName = int(input())
+lines = ['안녕하세요.\n','반갑습니다.\n','홍길동입니다.\n']
 # try:
-#     name.remove(delName)
-#     print(f'{delName} 이 삭제')
-# except:
-#     print(f'{delName} 데이터가 없습니다.')
-    
-    
-# ev_name = [i for i in name if i %2==0]
-# print(ev_name)
+#     with open('hello.txt','w') as f:
+#         for line in lines:
+#             f.write(line)
+# except Exception as err:
+#     print("파일쓰기 에러: ", err)
+# else:
+#     print("파일 쓰기 성공!")

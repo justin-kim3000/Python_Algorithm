@@ -186,13 +186,13 @@ import math
 # def stddev(*args):
 #     def mean():
 #         return sum(args) / len(args)
-    
+
 #     def variance(m): # 분산
 #         total = 0
 #         for arg in args:
 #             total += (arg-m) **2
 #             return total / (len(args)-1)
-        
+
 #     v = variance(mean())
 #     return math.sqrt(v)
 
@@ -223,17 +223,17 @@ import math
 # print(func1_lamb(1)(2,3))
 
 # 람다식 + map()
-num1 = [i for i in range(1,6)]
-num2 = [i for i in range(1,11) if i%2 ==0]
+num1 = [i for i in range(1, 6)]
+num2 = [i for i in range(1, 11) if i % 2 == 0]
 
 # print(num1,num2)
 # print(list(map(lambda x,y : x*y, num1, num2)))
 
-print(list(map(lambda x : x+10 if x%2==0 else x, num1)))
+print(list(map(lambda x: x+10 if x % 2 == 0 else x, num1)))
 
 # 람다식 + filter()
-num3 = [i for i in range(1,11)]
-print(list(filter(lambda x: x%3==0,num3)))
+num3 = [i for i in range(1, 11)]
+print(list(filter(lambda x: x % 3 == 0, num3)))
 
 # 람다식 + reduce()
-print(reduce(lambda x,y : x+y, [1,2,3,4,5]))
+print(reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]))
