@@ -85,3 +85,101 @@ class Car_ex:
 if __name__ == "__main__":
     ca = Car_ex("d","ds","asd","dd")
     ca.carInfoShow()
+    
+    
+    
+# class MyCount:
+#     count = 0
+#     def __init__(self) -> None:
+#         self.__count = 0
+#         self.__count += 1
+#         print('instance 변수 : ',self.__count)
+        
+#     @classmethod
+#     def print_count(cls):
+#         cls.count += 1
+#         print('class 변수 : ', cls.count)
+
+# if __name__ == '__main__':
+#     for i in range(5):
+#         MyCount()
+#         MyCount.print_count()
+        
+        
+# class Car6:
+#     def __init__(self,com="a",mod="b",col="c",pri="d"):
+#         self.__company = com
+#         self.__model = mod
+#         self.__color = col
+#         self.__price = pri
+        
+
+#     def carInfoShow(self):
+#         print('회사:', self.__company)
+#         print('모델:', self.__model)
+#         print('색상:', self.__color)
+#         print('가격:', self.__price)
+        
+#     def setModel(self, model):
+#         self.__model  =  model
+    
+#     def getModel(self):
+#         return self.__model
+
+
+# # class 상속
+# class Truck(Car6):
+#     def __init__(self, com="a", mod="b", col="c", pri="d", ton='to'):
+#         super().__init__(com, mod, col, pri)
+#         self.__ton = ton
+        
+#     def showCarInfo(self):
+#         super().carInfoShow()
+#         print("최대적재량: ", self.__ton)
+        
+# class Suv(Car6):
+#     def __init__(self, com="a", mod="b", col="c", pri="d", engine='to'):
+#         super().__init__(com, mod, col, pri)
+#         self.__engine = engine
+        
+#     # 재정의 (오버라이딩) : overriding
+#     def showCarInfo(self):
+#         super().carInfoShow()
+#         print("엔진: ", self.__engine)
+        
+        
+# if __name__ == '__main__':
+#     tr = Truck('현대','2.5트럭','파랑','4천만원','2.5톤')
+#     tr.showCarInfo()
+
+#     su = Suv('현대','투싼','블랙','2천만원','디젤')
+#     su.showCarInfo()
+    
+# 추상클래스 - 설계도면 역할
+# 주의:abstractmethod 는 반드시 오버라이딩 해야됨
+from abc import *
+class Person(metaclass=ABCMeta):
+    @abstractmethod
+    def speak(self):
+        pass
+    
+    @abstractmethod
+    def work(self):
+        pass
+    
+class Student(Person):
+    def speak(self):
+        print("질문하다")
+    def work(self):
+        print("공부하다")
+        
+class Teacher(Person):
+    def speak(self):
+        print("설명하다")
+    def work(self):
+        print("강의하다")
+        
+if __name__ == "__main__":
+    obj = [Student(),Teacher()]
+    for n in obj:
+        n.speak();n.work()
