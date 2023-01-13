@@ -8,6 +8,7 @@
     
     
 def dfs(start):
+    global arr, N, M
     if len(arr)==M:
         print(' '.join(map(str,arr)))
         return
