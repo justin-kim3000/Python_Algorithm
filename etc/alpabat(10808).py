@@ -1,5 +1,8 @@
 test = str(input())
+alpabat = [0 for _ in range(97,123)]
 for j in test:
     for i in range(97,123):
         if j == chr(i):
-            print(j)
+            alpabat[i-97] += 1
+            
+print(' '.join(str(i) for i in alpabat))
