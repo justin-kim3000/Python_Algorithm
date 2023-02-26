@@ -1,11 +1,10 @@
 basicNum = [str(i) for i in range(10)]
-givNum = list(input())
+givNum = input()
 counting = 1
 
 for i in givNum:
     if i in basicNum: 
         basicNum.remove(i)
-        pass
     elif i == '6' and i not in basicNum:
         if '9' in basicNum:
             basicNum.remove('9')
