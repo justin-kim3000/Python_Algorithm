@@ -1,20 +1,11 @@
 # 블록 제거 작업 2초 걸림 / 블록 추가 작업 1초 걸림
-N,M,B = map(int,input().split())
-
-li = []
-
-for i in range(N):
-    li.append(list(map(int,input().split())))
-
-
-print(li)
 import sys
 N, M, B = map(int,input().split())
 block = []
 for _ in range(N):
     block.append([int(x) for x in sys.stdin.readline().rstrip().split()])
 
-ans = int(1e9)
+ans = 6.4*10**7
 glevel = 0
 
 for i in range(257): #땅 높이
@@ -37,3 +28,31 @@ for i in range(257): #땅 높이
         glevel = i
 
 print(ans, glevel)
+
+import sys
+from collections import Counter
+
+n, m, inven = map(int, sys.stdin.readline().split())
+ground = []
+for _ in range(n):
+    ground += map(int, sys.stdin.readline().split())
+height, time = 0, 1000000000000000
+
+min_h = min(ground)
+max_h = max(ground)
+_sum = sum(ground)
+ground = dict(Counter(ground))
+
+for i in range(min_h, max_h + 1):
+    if _sum + inven >= i * n * m:
+        cur_time = 0
+        for key in ground:
+            if key > i:
+                cur_time += (key - i) * ground[key] * 2
+            elif key < i:
+                cur_time += (i - key) * ground[key]
+        if cur_time <= time:
+            time = cur_time
+            height = i
+
+print(time, height)
