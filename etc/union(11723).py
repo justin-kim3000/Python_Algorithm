@@ -1,7 +1,11 @@
 S = []
-M = map(int,input())
+M = int(input())
+temp = []
 for i in range(M):
+
     word, num = input().split()
+        
+    
     if word == 'add':
         if num not in S:
             S.append(num)
@@ -10,9 +14,12 @@ for i in range(M):
             S.remove(num)
     if word == 'check':
         if num in S:
-            print(1)
+            temp.append(1)
+            # print(1)
         else:
-            print(0)
+            temp.append(0)
+            
+            # print(0)
     if word == 'toggle':
         if num in S:
             S.remove(num)
@@ -23,3 +30,5 @@ for i in range(M):
         S = [i for i in range(1,21)]
     if word == 'empty':
         S = []
+        
+print(temp)
