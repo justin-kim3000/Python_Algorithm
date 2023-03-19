@@ -15,6 +15,7 @@ for i in range(M):
     if word == 'check':
         if num in S:
             temp.append(1)
+        
             # print(1)
         else:
             temp.append(0)
