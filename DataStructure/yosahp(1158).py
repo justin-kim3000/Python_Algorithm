@@ -1,5 +1,9 @@
-N, K = map(int,input().split())
+N, K = map(int, input().split())
 
-for i in range(1,N):
+for i in range(1, N):
     if K*i <= N:
-        break
+        print(f'{K*i},', end=' ')
+    elif N-K*i < 0:
+        print(f'{-(N-K*i)},', end=' ')
+    else:
+        print(f'{N-K*i},', end=' ')
