@@ -1,35 +1,35 @@
-S = []
 M = int(input())
-temp = []
-for i in range(M):
+S = set()
 
-    word, num = input().split()
-        
-    
-    if word == 'add':
-        if num not in S:
-            S.append(num)
-    if word == 'remove':
-        if num in S:
-            S.remove(num)
-    if word == 'check':
-        if num in S:
-            temp.append(1)
-        
-            # print(1)
+for _ in range(M):
+    com = input().split()
+
+    if len(com) == 1:
+        com0 = com[0]
+    else:
+        com0, com1 = com
+
+    if com0 == "add":
+        S.add(int(com1))
+
+    elif com0 == "remove":
+        if int(com1) in S:
+            S.remove(int(com1))
+
+    elif com0 == "check":
+        if int(com1) in S:
+            print(1)
         else:
-            temp.append(0)
-            
-            # print(0)
-    if word == 'toggle':
-        if num in S:
-            S.remove(num)
+            print(0)
+
+    elif com0 == "toggle":
+        if int(com1) in S:
+            S.remove(int(com1))
         else:
-            S.append(num)
-    if word == 'all':
-        S = []
-        S = [i for i in range(1,21)]
-    if word == 'empty':
-        S = []
-        
-print(temp)
+            S.add(int(com1))
+
+    elif com0 == "all":
+        S = {i for i in range(1, 21)}
+
+    else:
+        S.clear()
